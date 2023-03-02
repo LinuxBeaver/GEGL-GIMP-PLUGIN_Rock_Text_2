@@ -1,6 +1,22 @@
-This filter requires Gimp 2.10.32 and up and
-https://github.com/LinuxBeaver/GEGL-Custom-Bevel and https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/  to work.
- It will not work proper at all without these filters and recent version of Gimp
+This filter will only work proper on  Gimp 2.10.32 and up. 
+
+FILTER REQUIRES  [https://github.com/LinuxBeaver/GEGL-Custom-Bevel](https://github.com/LinuxBeaver/GEGL-Custom-Bevel/releases)
+and
+[https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/ ](https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow) to work. 
+It will NOT WORK AT ALL WITHOUT THESE TWO ADDITIONAL FILTERS. All the end user has to do is download the release files but one can compile if they want.
+
+
+## OS specific location to put GEGL Filter binaries 
+
+Windows
+ C:\\Users\<YOUR NAME>\AppData\Local\gegl-0.4\plug-ins
+ 
+ Linux 
+ /home/(USERNAME)/.local/share/gegl-0.4/plug-ins
+ 
+ Linux (Flatpak)
+ /home/(USERNAME)/.var/app/org.gimp.GIMP/data/gegl-0.4/plug-ins
+
 
 ## Compiling and Installing
 
