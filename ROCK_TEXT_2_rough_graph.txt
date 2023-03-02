@@ -1,0 +1,18 @@
+
+#rock text2
+median-blur radius=2 alpha-percentile=80
+noise-spread amount-x=38 amount-y=48 seed=233
+gimp:threshold-alpha
+custom-bevel blendmode=Hardlight  gaus=4 box=4 alphapercentile=10
+gimp:threshold-alpha
+bloom strength=10
+id=ls
+gimp:layer-mode layer-mode=behind aux=[ ref=ls long-shadow-pd angle=90 length=9 lightness=99  ]
+crop
+denoise-dct patch-size=size8x8 sigma=7
+id=slemboss
+gimp:layer-mode opacity=0.50 layer-mode=softlight aux=[ ref=slemboss emboss depth=10 elevation=60 azimuth=120 ]
+levels in-low=0.09
+brightness-contrast brightness=0.04
+noise-reduction iterations=2
+
