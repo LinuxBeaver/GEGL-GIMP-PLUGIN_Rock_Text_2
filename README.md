@@ -8,7 +8,7 @@ This filter will only work proper on  Gimp 2.10.32 and up.
 
 FILTER REQUIRES  [https://github.com/LinuxBeaver/GEGL-Custom-Bevel](https://github.com/LinuxBeaver/GEGL-Custom-Bevel/releases)
 and
-[https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/ ](https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow) to work. 
+[https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/ ](https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/releases) to work. 
 It will NOT WORK AT ALL WITHOUT THESE TWO ADDITIONAL FILTERS. All the end user has to do is download the release files but one can compile if they want.
 
 
