@@ -103,7 +103,7 @@ property_int (box, _("Internal Box Blur (fatness of bevel)"), 1)
 
 
 
-property_int  (radius, _("Radius (Lower makes wider)"), 2)
+property_int  (radius, _("Radius (Low smaller - large bigger)"), 2)
   value_range (-40, 40)
   ui_range    (-40, 40)
   ui_meta     ("unit", "pixel-distance")
