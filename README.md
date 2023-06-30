@@ -1,10 +1,11 @@
+#Rock Text 2 - make awesome Rock Text using this Gimp Plugin (and image file overlay textures)
 
 
 ![image preview](rock_text_2.png  )
 ![image preview](rock_text_22.png  )
 
 
-This filter will only work proper on  Gimp 2.10.32 and up. 
+This filter will only work proper on  Gimp 2.10.32 and up and if you are not compiling from source (by using binaries) you can ignore the task below. Just make sure to grab all three binaries and overwrite the ones you already have.
 
 FILTER REQUIRES  [https://github.com/LinuxBeaver/GEGL-Custom-Bevel](https://github.com/LinuxBeaver/GEGL-Custom-Bevel/releases)
 and
@@ -60,6 +61,13 @@ Then build the same way you would on Linux:
 meson setup --buildtype=release build
 ninja -C build
 ```
+
+# More previews of this plugin just to show off how based it is.
+
+![image](https://github.com/LinuxBeaver/GEGL-STONE-TEXT-2/assets/78667207/12821b5c-bf77-408c-80bd-1e38a1b89634)
+
+![image](https://github.com/LinuxBeaver/GEGL-STONE-TEXT-2/assets/78667207/4939ed5c-25e4-4515-bcde-5f85f0225133)
+
 
 
 
