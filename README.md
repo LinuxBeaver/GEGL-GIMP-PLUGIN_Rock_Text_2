@@ -68,6 +68,8 @@ ninja -C build
 
 ![image](https://github.com/LinuxBeaver/GEGL-STONE-TEXT-2/assets/78667207/4939ed5c-25e4-4515-bcde-5f85f0225133)
 
+![image](https://github.com/LinuxBeaver/GEGL-STONE-TEXT-2/assets/78667207/037cbd95-e0ff-403e-b7b6-287aa7defc23)
+
 
 
 
