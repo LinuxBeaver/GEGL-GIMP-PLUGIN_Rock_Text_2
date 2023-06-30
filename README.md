@@ -5,12 +5,17 @@
 ![image preview](rock_text_22.png  )
 
 
-This filter will only work proper on  Gimp 2.10.32 and up and if you are not compiling from source (by using binaries) you can ignore the task below. Just make sure to grab all three binaries and overwrite the ones you already have.
+This filter will only work proper on  Gimp 2.10.32 and up and if you are not compiling from source (by using binaries) you can ignore the task below. If you are compiling you must also compile **Custom Bevel** and **Long Shadow PD**. Make sure to grab all three binaries and overwrite the ones you already have.  Custom bevel and Long Shadow pd are quality plugins of their own. It is impossible to use Rock Text 2 without them.
 
-FILTER REQUIRES  [https://github.com/LinuxBeaver/GEGL-Custom-Bevel](https://github.com/LinuxBeaver/GEGL-Custom-Bevel/releases)
+
+**REQUIREMENTS FOR COMPILERS**
+
+[https://github.com/LinuxBeaver/GEGL-Custom-Bevel](https://github.com/LinuxBeaver/GEGL-Custom-Bevel/releases)
+
 and
+
 [https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/ ](https://github.com/LinuxBeaver/GEGL-Extrusion-2----Fork-of-GEGL-Long-Shadow/releases) to work. 
-**It will NOT WORK AT ALL WITHOUT THESE TWO ADDITIONAL FILTERS.** So if you compile you'll have to compile these as well.
+
 
 
 ## OS specific location to put GEGL Filter binaries 
