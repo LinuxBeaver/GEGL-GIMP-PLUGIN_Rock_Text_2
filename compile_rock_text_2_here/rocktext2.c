@@ -29,7 +29,7 @@ custom-bevel blendmode=Hardlight  gaus=4 box=4 alphapercentile=10
 gimp:threshold-alpha
 bloom strength=10
 id=ls
-gimp:layer-mode layer-mode=behind aux=[ ref=ls long-shadow-pd angle=90 length=9 lightness=99  ]
+gimp:layer-mode layer-mode=behind aux=[ ref=ls lb:long-shadow-pd angle=90 length=9 lightness=99  ]
 crop
 denoise-dct patch-size=size8x8 sigma=7
 id=slemboss
@@ -176,11 +176,11 @@ static void attach (GeglOperation *operation)
 
 
   cb    = gegl_node_new_child (gegl,
-                                  "operation", "gegl:custom-bevel",
+                                  "operation", "lb:custom-bevel",
                                   NULL);
 
   lspd    = gegl_node_new_child (gegl,
-                                  "operation", "gegl:long-shadow-pd",
+                                  "operation", "lb:long-shadow-pd",
                                   NULL);
 
   color    = gegl_node_new_child (gegl,
@@ -246,8 +246,8 @@ static void attach (GeglOperation *operation)
 
   gegl_node_link_many (input, median, spread, ta, cb, graph1, nop, behind, graph2, levels, multiply, output, NULL);
   gegl_node_link_many (nop, lspd, NULL);
-  gegl_node_connect_from (behind, "aux", lspd, "output");
-  gegl_node_connect_from (multiply, "aux", color, "output");
+  gegl_node_connect (behind, "aux", lspd, "output");
+  gegl_node_connect (multiply, "aux", color, "output");
 
 
 
@@ -263,7 +263,7 @@ gegl_op_class_init (GeglOpClass *klass)
   operation_class->attach = attach;
 
   gegl_operation_class_set_keys (operation_class,
-    "name",        "gegl:rock-text2",
+    "name",        "lb:rock-text2",
     "title",       _("Rock Text 2"),
     "categories",  "Aristic",
     "reference-hash", "b2do6a2ro26rogk0fjf25sb2ac",

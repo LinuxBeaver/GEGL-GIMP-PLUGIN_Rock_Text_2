@@ -117,18 +117,18 @@ update_graph (GeglOperation *operation)
   if (o->ls2)
   {
          gegl_node_link_many (state->input, aloneorbehind, state->output, NULL);
-      gegl_node_connect_from (aloneorbehind, "aux", state->lightchroma, "output");
+      gegl_node_connect (aloneorbehind, "aux", state->lightchroma, "output");
          gegl_node_link_many (state->input, state->ls2, state->alock, state->lightchroma, NULL);
       gegl_node_link_many (state->input, state->lmb, NULL);
-      gegl_node_connect_from (state->alock, "aux", state->lmb, "output");
+      gegl_node_connect (state->alock, "aux", state->lmb, "output");
   }
   else
   {
          gegl_node_link_many (state->input, aloneorbehind, state->output, NULL);
-      gegl_node_connect_from (aloneorbehind, "aux", state->lightchroma, "output");
+      gegl_node_connect (aloneorbehind, "aux", state->lightchroma, "output");
          gegl_node_link_many (state->input, state->ls, state->alock, state->lightchroma, NULL);
       gegl_node_link_many (state->input, state->lmb, NULL);
-      gegl_node_connect_from (state->alock, "aux", state->lmb, "output");
+      gegl_node_connect (state->alock, "aux", state->lmb, "output");
   }
 }
 
@@ -222,7 +222,7 @@ GeglOperationMetaClass *operation_meta_class = GEGL_OPERATION_META_CLASS (klass)
   operation_meta_class->update = update_graph;
 
   gegl_operation_class_set_keys (operation_class,
-    "name",        "gegl:long-shadow-pd",
+    "name",        "lb:long-shadow-pd",
     "title",       _("Extrusion via Long Shadow"),
     "reference-hash", "45ed1636v1f3agbr2549lfl5s001b2ac",
     "description", _("Fork of the existing Long Shadow filter but it uses Pixel Data. "
