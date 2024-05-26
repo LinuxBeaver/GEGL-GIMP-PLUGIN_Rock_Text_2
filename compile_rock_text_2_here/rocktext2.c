@@ -14,7 +14,7 @@
  * License along with GEGL; if not, see <https://www.gnu.org/licenses/>.
  *
  * Copyright 2006 Øyvind Kolås <pippin@gimp.org>
- * 2023 Beaver (GEGL Rock Text 2) 
+ * 2023 Beaver (GEGL Rock Text 2)
  */
 
 /*
@@ -222,9 +222,7 @@ static void attach (GeglOperation *operation)
   levels    = gegl_node_new_child (gegl,
                                   "operation", "gegl:levels",
                                   NULL);
-                        
 
-  gegl_operation_meta_redirect (operation, "value", color, "value");
   gegl_operation_meta_redirect (operation, "gaus", cb, "gaus");
   gegl_operation_meta_redirect (operation, "box", cb, "box");
   gegl_operation_meta_redirect (operation, "depth", cb, "depth");
@@ -237,8 +235,6 @@ static void attach (GeglOperation *operation)
   gegl_operation_meta_redirect (operation, "amounty", spread, "amount-y");
   gegl_operation_meta_redirect (operation, "seed", spread, "seed");
   gegl_operation_meta_redirect (operation, "layer", cb, "src");
-  gegl_operation_meta_redirect (operation, "string1", graph1, "string");
-  gegl_operation_meta_redirect (operation, "string2", graph2, "string");
   gegl_operation_meta_redirect (operation, "angle", lspd, "angle");
   gegl_operation_meta_redirect (operation, "length", lspd, "length");
   gegl_operation_meta_redirect (operation, "lightness", lspd, "lightness");
