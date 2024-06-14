@@ -66,7 +66,7 @@ property_seed (seed, _("Random seed"), rand)
 
 
 #define TUTORIAL2 \
-" crop denoise-dct patch-size=size8x8 sigma=8 id=slemboss gimp:layer-mode opacity=0.50 layer-mode=softlight aux=[ ref=slemboss emboss depth=10 elevation=60 azimuth=120 ] noise-reduction iterations=2 "\
+"   id=slemboss gimp:layer-mode opacity=0.50 layer-mode=softlight aux=[ ref=slemboss emboss depth=10 elevation=60 azimuth=120 ] noise-reduction iterations=2 "\
 
 enum_start (gegl_blend_mode_typecbevel3)
   enum_value (GEGL_BLEND_MODE_TYPE_HARDLIGHT3, "Hardlight",
@@ -168,7 +168,7 @@ property_double (lightness, _("Darkness to Lightness of Extrusion"), 2.4)
 static void attach (GeglOperation *operation)
 {
   GeglNode *gegl = operation->node;
-  GeglNode *input, *median, *spread, *ta, *cb, *nop, *graph1, *levels, *multiply, *behind, *lspd,  *color,  *graph2, *output;
+  GeglNode *input, *median, *spread, *ta, *cb, *nop, *edgesmooth, *graph1, *levels, *multiply, *behind, *lspd,  *color,  *graph2, *output;
 
   input    = gegl_node_get_input_proxy (gegl, "input");
   output   = gegl_node_get_output_proxy (gegl, "output");
@@ -223,6 +223,10 @@ static void attach (GeglOperation *operation)
                                   "operation", "gegl:levels",
                                   NULL);
 
+  edgesmooth    = gegl_node_new_child (gegl,
+                                  "operation", "lb:edgesmooth", "value", 1.9,
+                                  NULL);
+
   gegl_operation_meta_redirect (operation, "gaus", cb, "gaus");
   gegl_operation_meta_redirect (operation, "box", cb, "box");
   gegl_operation_meta_redirect (operation, "depth", cb, "depth");
@@ -240,12 +244,10 @@ static void attach (GeglOperation *operation)
   gegl_operation_meta_redirect (operation, "lightness", lspd, "lightness");
   gegl_operation_meta_redirect (operation, "inlow", levels, "in-low");
 
-  gegl_node_link_many (input, median, spread, ta, cb, graph1, nop, behind, graph2, levels, multiply, output, NULL);
+  gegl_node_link_many (input, median, spread, ta, cb, graph1, nop, behind, graph2, levels, multiply, edgesmooth, output, NULL);
   gegl_node_link_many (nop, lspd, NULL);
   gegl_node_connect (behind, "aux", lspd, "output");
   gegl_node_connect (multiply, "aux", color, "output");
-
-
 
 }
 
