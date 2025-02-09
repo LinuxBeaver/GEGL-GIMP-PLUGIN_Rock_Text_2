@@ -66,7 +66,7 @@ property_seed (seed, _("Random seed"), rand)
 
 
 #define TUTORIAL2 \
-" crop denoise-dct patch-size=size8x8 sigma=8 id=slemboss gimp:layer-mode opacity=0.50 layer-mode=softlight aux=[ ref=slemboss emboss depth=10 elevation=60 azimuth=120 ] noise-reduction iterations=2 "\
+" id=1 crop aux=[ ref=1 ] mean-curvature-blur iterations=4 id=slemboss gimp:layer-mode opacity=0.50 layer-mode=softlight aux=[ ref=slemboss emboss depth=10 elevation=60 azimuth=120 ] noise-reduction iterations=2 "\
 
 enum_start (gegl_blend_mode_typecbevel3)
   enum_value (GEGL_BLEND_MODE_TYPE_HARDLIGHT3, "Hardlight",
